@@ -3,8 +3,6 @@ version: "3"
 services:
   directus:
     image: directus/directus:9.22.1
-    ports:
-      - 443:8055
     volumes:
       - ./database:/directus/database
       - ./extensions:/directus/extensions
