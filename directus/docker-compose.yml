@@ -26,14 +26,9 @@ services:
     ports:
       - 8055:8055
     volumes:
-      # By default, uploads are stored in /directus/uploads
-      # Always make sure your volumes matches the storage root when using
-      # local driver
+      - ./database:/directus/database
+      - ./extensions:/directus/extensions
       - ./uploads:/directus/uploads
-      # Make sure to also mount the volume when using SQLite
-      # - ./database:/directus/database
-      # If you want to load extensions from the host
-      # - ./extensions:/directus/extensions
     networks:
       - directus
     depends_on:
